@@ -1,12 +1,10 @@
-name: 'Terraform'
-
 on: push
-
 jobs:
   my_job:
+    runs-on: ununtu-latest
     container: hashicorp/terraform:light
-  steps:
-    - run: rm -rf .terraform
-    - run: terraform --version
-    - run: terraform init
-    - run: terraform validate
+    steps:
+      - run: rm -rf .terraform
+      - run: terraform --version
+      - run: terraform init
+      - run: terraform validate
